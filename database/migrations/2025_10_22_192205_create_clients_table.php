@@ -23,6 +23,7 @@ return new class extends Migration
             $table->date('registration_date');
             $table->string('account_status');
             $table->string('pasword');
+            
             $table->timestamps();
         });
     }
