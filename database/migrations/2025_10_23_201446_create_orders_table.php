@@ -23,6 +23,11 @@ return new class extends Migration
             $table->integer('unit_price');
             $table->integer('total_amount');
             $table->string('delivery_status');
+
+            $table->integer('client_id')->unsigned();
+            $table->foreign('client_id')->references('id')->on
+            ('clients')->onDelete('cascade')->onUpdate('cascade');
+            
             $table->timestamps();
         });
     }
