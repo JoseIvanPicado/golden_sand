@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('address');
             $table->date('registration_date');
             $table->string('account_status');
-            $table->string('pasword');
+            $table->string('password')->unique();
             $table->timestamps();
         });
     }
