@@ -19,7 +19,11 @@ return new class extends Migration
             $table->string('delivery_type');
             $table->string('delivery_address');
             $table->time('estimated_time');
+<<<<<<< HEAD
             $table->integer('quantity');
+=======
+            $table->integer('cuantity');
+>>>>>>> main
             $table->integer('unit_price');
             $table->integer('total_amount');
             $table->string('delivery_status');
