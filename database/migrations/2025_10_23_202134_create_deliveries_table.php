@@ -11,8 +11,23 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('deliverys', function (Blueprint $table) {
-            $table->id();
+        Schema::create('deliveries', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('available_status');
+            $table->string('assigned_zone');
+            $table->string('delivery_person')->nullable();
+            $table->date('admission_date');
+            $table->time('departure_time');
+            $table->time('arrival_time')->nullable();
+
+            $table->integer('employees_id')->unsigned();
+            $table->foreign('employees_id')->references('id')->on
+            ('employees')->onDelete('cascade')->onUpdate('cascade');
+
+            $table->integer('clients_id')->unsigned();
+            $table->foreign('clients_id')->references('id')->on
+            ('clients')->onDelete('cascade')->onUpdate('cascade');
+            
             $table->timestamps();
         });
     }
@@ -22,6 +37,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('deliverys');
+        Schema::dropIfExists('deliveries');
     }
 };

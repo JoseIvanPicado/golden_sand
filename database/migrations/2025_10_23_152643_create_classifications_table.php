@@ -11,10 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('classification', function (Blueprint $table) {
+        Schema::create('classifications', function (Blueprint $table) {
             $table->increments('id');
             $table->string('category_name');
-            $table->string('description');
+            $table->string('description')->nullable();
+            $table->string('status');
+            $table->date('creation_date');
+            $table->date('modification_date');
+            $table->string('reference_image');
+            $table->string('by_user');
             
             $table->integer('products_id')->unsigned();
             $table->foreign('products_id')->references('id')->on
@@ -29,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('classification');
+        Schema::dropIfExists('classifications');
     }
 };
