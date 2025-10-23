@@ -12,7 +12,22 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('order_details', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('description');
+            $table->decimal('unitary_price', 8, 2);
+            $table->integer('available_quantity');
+            $table->integer('sold_quantity');
+            $table->integer('total_price');
+            $table->date('authorization_date');
+
+            $table->integer('payments_id')->unsigned();
+            $table->foreign('payments_id')->references('id')->on
+            ('payments')->onDelete('cascade')->onUpdate('cascade');
+
+            $table->integer('orders_id')->unsigned();
+            $table->foreign('orders_id')->references('id')->on
+            ('orders')->onDelete('cascade')->onUpdate('cascade');
+
             $table->timestamps();
         });
     }
