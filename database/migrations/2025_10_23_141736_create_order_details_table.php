@@ -12,7 +12,6 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('order_details', function (Blueprint $table) {
-<<<<<<< HEAD
             $table->increments('id');
             $table->string('description');
             $table->decimal('unitary_price', 8, 2);
@@ -29,9 +28,6 @@ return new class extends Migration
             $table->foreign('orders_id')->references('id')->on
             ('orders')->onDelete('cascade')->onUpdate('cascade');
 
-=======
-            $table->id();
->>>>>>> main
             $table->timestamps();
         });
     }

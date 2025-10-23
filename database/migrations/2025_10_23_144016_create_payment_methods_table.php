@@ -22,11 +22,7 @@ return new class extends Migration
             $table->date('expiration_date');
             $table->string('receiver_name');
             $table->integer('amount');
-<<<<<<< HEAD
             $table->string('mail');
-=======
-            $table->string('mail'):
->>>>>>> main
             $table->integer('commission_fee');
 
             $table->integer('payments_id')->unsigned();
