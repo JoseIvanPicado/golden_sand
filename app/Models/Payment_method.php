@@ -17,7 +17,9 @@ class Payment_method extends Model
         'reference_transaction',
         'autorization_date',
         'registration_date',
-        'commision'
+        'commision',
+        'payment_id',
+        'product_id'
     ];
 
     public function payment()
