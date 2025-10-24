@@ -70,6 +70,6 @@ class EmployeeController extends Controller
     {
         $employees = Employee::find($id);
         $employees->delete();
-        return redirect()->route('employees.index')->with('deleted', 'Empleado eliminado.');
+        return redirect()->route('employees.index')->with('success', 'Empleado eliminado.');
     }
 }
