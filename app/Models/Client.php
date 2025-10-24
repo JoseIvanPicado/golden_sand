@@ -26,11 +26,16 @@ class Client extends Model
 
     public function order()
     {
-        return $this->hasOne(Order::class);
+        return $this->hasMany(Order::class);
     }
 
     public function payment()
     {
-        return $this->hasOne(Payment::class);
+        return $this->hasMany(Payment::class);
+    }
+
+    public function delivery()
+    {
+        return $this->hasMany(Delivery::class);
     }
 }

@@ -19,8 +19,8 @@ class Classification extends Model
         'product_id'
     ]; 
 
-    public function product()
+    public function products()
     {
-        return $this->hasMany(Product::class);
+        return $this->belongsTo(Product::class);
     }
 }

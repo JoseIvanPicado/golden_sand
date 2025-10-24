@@ -19,13 +19,18 @@ class Order_detail extends Model
         'order_id'
     ];
 
-    public function payment()
+    public function payments()
     {
         return $this->belongsTo(Payment::class);
     }
 
-    public function order()
+    public function orders()
     {
-        return $this->hasMany(Order::class);
+        return $this->belongsTo(Order::class);
+    }
+
+    public function inventory()
+    {
+        return $this->hasMany(Inventory::class);
     }
 }

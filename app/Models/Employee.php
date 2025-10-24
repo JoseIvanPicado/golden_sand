@@ -30,11 +30,12 @@ class Employee extends Model
 
     public function inventory()
     {
-        return $this->hasOne(Inventory::class);
+        return $this->hasMany(Inventory::class);
     }
 
     public function delivery()
     {
-        return $this->hasOne(Delivery::class);
+        return $this->hasMany(Delivery::class);
     }
+
 }

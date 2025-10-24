@@ -26,22 +26,22 @@ class Inventory extends Model
         'ingredient_id'
     ];
 
-    public function product()
+    public function products()
     {
         return $this->belongsTo(Product::class);
     }
 
-    public function employee()
+    public function employees()
     {
         return $this->belongsTo(Employee::class);
     }  
 
-    public function order_detail()
+    public function order_details()
     {
         return $this->belongsTo(Order_detail::class);
     }
 
-    public function ingredient()
+    public function ingredients()
     {
         return $this->belongsTo(Ingredient::class);
     }
