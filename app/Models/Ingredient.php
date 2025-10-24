@@ -23,10 +23,8 @@ class Ingredient extends Model
         'total_cost'
     ];
 
-    public function products()
+    public function warehouse()
     {
-        return $this->belongsToMany(Product::class, 'ingredient_product', 'ingredient_id', 'product_id')
-                    ->withPivot('quantity_used')
-                    ->withTimestamps();
+        return $this->Hasmany(warehouse::class);
     }
 }
