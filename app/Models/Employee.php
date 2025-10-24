@@ -30,6 +30,6 @@ class Employee extends Model
 
     public function warehouse()
     {
-        return $this->hasOne(warehouse::class);
+        return $this->hasMany(warehouse::class);
     }
 }
