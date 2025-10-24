@@ -14,6 +14,18 @@ class Delivery extends Model
         'delivery_person',
         'admission_date',
         'departure_time',
-        'arrival_time'
+        'arrival_time',
+        'employee_id',
+        'client_id'
     ];
+
+    public function employee()
+    {
+        return $this->belongsTo(Employee::class);
+    }
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class);
+    }
 }
