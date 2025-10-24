@@ -22,6 +22,14 @@ return new class extends Migration
             $table->date('authorization_date');
             $table->date('registration_date');
             $table->integer('commision');
+
+            $table->integer('orders_id')->unsigned();
+            $table->foreign('orders_id')->references('id')->on
+            ('orders')->onDelete('cascade')->onUpdate('cascade');
+
+            $table->integer('payments_id')->unsigned();
+            $table->foreign('payments_id')->references('id')->on
+            ('payments')->onDelete('cascade')->onUpdate('cascade');
             
             $table->timestamps();
         });

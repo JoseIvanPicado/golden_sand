@@ -28,8 +28,13 @@ class Employee extends Model
         'account_status'
     ];
 
-    public function warehouse()
+    public function inventory()
     {
-        return $this->hasOne(warehouse::class);
+        return $this->hasOne(Inventory::class);
+    }
+
+    public function delivery()
+    {
+        return $this->hasOne(Delivery::class);
     }
 }
