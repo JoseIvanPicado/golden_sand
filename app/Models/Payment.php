@@ -26,8 +26,14 @@ class Payment extends Model
         'due_date'
     ];
 
-    public function warehouses()
+    public function order_detail()
     {
-        return $this->hasMany(warehouses::class);
+        return $this->hasOne(Order_detail::class);
     }
+
+    public function payment_method()
+    {
+        return $this->hasOne(Payment_method::class);
+    }
+
 }

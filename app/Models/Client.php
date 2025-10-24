@@ -24,8 +24,13 @@ class Client extends Model
         'password'
     ];
 
-    public function warehouses()
+    public function order()
     {
-        return $this->hasMany(Warehouse::class);
+        return $this->hasOne(Order::class);
+    }
+
+    public function payment()
+    {
+        return $this->hasOne(Payment::class);
     }
 }
