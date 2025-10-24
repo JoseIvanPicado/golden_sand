@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('delivery_type');
             $table->string('delivery_address');
             $table->time('estimated_time');
-            $table->integer('quantity');
+            $table->integer('cuantity');
             $table->integer('unit_price');
             $table->integer('total_amount');
             $table->string('delivery_status');
@@ -27,6 +27,10 @@ return new class extends Migration
             $table->integer('client_id')->unsigned();
             $table->foreign('client_id')->references('id')->on
             ('clients')->onDelete('cascade')->onUpdate('cascade');
+
+            $table->integer('order_details_id')->unsigned();
+            $table->foreign('order_details_id')->references('id')->on
+            ('order_details')->onDelete('cascade')->onUpdate('cascade');
             
             $table->timestamps();
         });
