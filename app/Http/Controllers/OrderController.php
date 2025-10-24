@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Order;
+use App\Http\Requests\OrderRequest;
+use App\Models\Client;
 class OrderController extends Controller
 {
     /**
@@ -11,7 +13,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $clients = Client::with('client', )
     }
 
     /**
