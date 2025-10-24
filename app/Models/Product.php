@@ -24,22 +24,22 @@ class Product extends Model
 
     public function payment_method()
     {
-        return $this->hasOne(Payment_method::class);
+        return $this->hasMany(Payment_method::class);
     }
 
     public function preparation_order()
     {
-        return $this->hasOne(Preparation_order::class);
+        return $this->hasMany(Preparation_order::class);
     }
 
     public function classification()
     {
-        return $this->hasOne(Classification::class);
+        return $this->hasMany(Classification::class);
     }
 
     public function inventory()
     {
-        return $this->hasOne(Inventory::class);
+        return $this->hasMany(Inventory::class);
     }
-    
+
 }

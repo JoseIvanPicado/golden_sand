@@ -28,12 +28,12 @@ class Payment extends Model
 
     public function order_detail()
     {
-        return $this->hasOne(Order_detail::class);
+        return $this->hasMany(Order_detail::class);
     }
 
     public function payment_method()
     {
-        return $this->hasOne(Payment_method::class);
+        return $this->hasMany(Payment_method::class);
     }
 
 }
