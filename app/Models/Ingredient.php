@@ -23,8 +23,8 @@ class Ingredient extends Model
         'total_cost'
     ];
 
-    public function warehouse()
+    public function inventory()
     {
-        return $this->Hasmany(warehouse::class);
+        return $this->hasOne(Inventory::class);
     }
 }

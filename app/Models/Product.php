@@ -22,8 +22,24 @@ class Product extends Model
         'reference_image'
     ];
 
-    public function warehouse()
+    public function payment_method()
     {
-        return $this->hasMany(warehouse::class);
+        return $this->hasOne(Payment_method::class);
     }
+
+    public function preparation_order()
+    {
+        return $this->hasOne(Preparation_order::class);
+    }
+
+    public function classification()
+    {
+        return $this->hasOne(Classification::class);
+    }
+
+    public function inventory()
+    {
+        return $this->hasOne(Inventory::class);
+    }
+    
 }
