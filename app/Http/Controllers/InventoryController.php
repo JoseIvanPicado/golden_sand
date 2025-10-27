@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Inventory;
 use App\Http\Requests\InventoryRequest;
 use App\Models\Product;
