@@ -13,7 +13,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $clients = Client::with('client', )
+        $orders = Order::with('client')->paginate(5);
+        return view('orders.index', compact ('orders'));
     }
 
     /**
@@ -21,46 +22,58 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        $orders = new Order();
+        $clients = Client::all();
+        return view('orders.create', compact('orders','clients'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(OrderRequest $request)
     {
-        //
+        Order::create($request->validated());
+        return redirect()->route('orders.index')->with('success', 'Pedido creado.');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(int $id)
     {
-        //
+        $orders = Order::find($id);
+        $clients = Client::all();
+        return view('orders', compact('orders','clients'));
+
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(int $id)
     {
-        //
+        $orders = Order::find($id);
+        $clients = Client::all();
+        return view('orders.edit', compact('orders','clients'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(OrderRequest $request, int $id)
     {
-        //
+        $orders = Order::find($id);
+        $orders->update($request->validated());
+        return redirect()->route('orders.index')->with('updated', 'Pedido actualizado.');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(int $id)
     {
-        //
+        $orders = Order::find($id);
+        $orders->delete();
+        return redirect()->route('orders.index')->with('deleted', 'Pedido eliminado.');
     }
 }

@@ -20,11 +20,11 @@ return new class extends Migration
             $table->date('modification_date');
             $table->string('reference_image');
             $table->string('by_user');
-            
+
             $table->integer('products_id')->unsigned();
             $table->foreign('products_id')->references('id')->on
             ('products')->onDelete('cascade')->onUpdate('cascade');
-            
+
             $table->timestamps();
         });
     }
