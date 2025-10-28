@@ -28,10 +28,12 @@ class OrderRequest extends FormRequest
             'delivery_type'    => 'required|string|min:3|max:100',
             'delivery_address' => 'required|string|min:5|max:255',
             'estimated_time'   => 'required|date_format:H:i',
-            'cuantity'         => 'required|integer|min:1',
+            'quantity'         => 'required|integer|min:1',
             'unit_price'       => 'required|integer|min:0',
             'total_amount'     => 'required|integer|min:0',
             'delivery_status'  => 'required|string|min:3|max:50',
+            'client_id'        => 'required|integer|min:1|exists:clients,id',
+            'order_details_id' => 'required|integer|min:1|exists:order_details,id',
         ];
     }
 
@@ -68,10 +70,10 @@ class OrderRequest extends FormRequest
             'estimated_time.required'    => 'El tiempo estimado es obligatorio.',
             'estimated_time.date_format' => 'El tiempo estimado debe tener el formato HH:MM (24h).',
 
-            // cuantity
-            'cuantity.required' => 'La cantidad es obligatoria.',
-            'cuantity.integer'  => 'La cantidad debe ser un número entero.',
-            'cuantity.min'      => 'La cantidad debe ser como mínimo :min.',
+            // quantity
+            'quantity.required' => 'La cantidad es obligatoria.',
+            'quantity.integer'  => 'La cantidad debe ser un número entero.',
+            'quantity.min'      => 'La cantidad debe ser como mínimo :min.',
 
             // unit_price
             'unit_price.required' => 'El precio unitario es obligatorio.',
@@ -88,6 +90,16 @@ class OrderRequest extends FormRequest
             'delivery_status.string'   => 'El estado de la entrega debe ser texto.',
             'delivery_status.min'      => 'El estado de la entrega debe tener al menos :min caracteres.',
             'delivery_status.max'      => 'El estado de la entrega no puede tener más de :max caracteres.',
+
+            // client_id
+            'client_id.required' => 'El ID del cliente es obligatorio.',
+            'client_id.integer'  => 'El ID del cliente debe ser un número entero.',
+            'client_id.exists'   => 'El cliente especificado no existe.',
+
+            // order_details_id
+            'order_details_id.required' => 'El ID de los detalles del pedido es obligatorio.',
+            'order_details_id.integer'  => 'El ID de los detalles del pedido debe ser un número entero.',
+            'order_details_id.exists'   => 'Los detalles del pedido especificados no existen.',
         ];
     }
 }
