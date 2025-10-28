@@ -1,6 +1,6 @@
 $white: #ffffff;
 $black: #000000;
-$primary1: #ffbe33;
+$primary1: #c9961a;
 $primary2: #222831;
 $textCol: #1f1f1f;
 
@@ -13,7 +13,7 @@ $textCol: #1f1f1f;
 }
 
 @mixin second-font {
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Cooper Black', cursive;
 }
 
 @mixin hero_btn($col1, $col2, $pad1, $pad2, $bRadius) {

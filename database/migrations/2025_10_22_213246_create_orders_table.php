@@ -28,10 +28,6 @@ return new class extends Migration
             $table->foreign('client_id')->references('id')->on
             ('clients')->onDelete('cascade')->onUpdate('cascade');
 
-            $table->integer('order_details_id')->unsigned();
-            $table->foreign('order_details_id')->references('id')->on
-            ('order_details')->onDelete('cascade')->onUpdate('cascade');
-            
             $table->timestamps();
         });
     }

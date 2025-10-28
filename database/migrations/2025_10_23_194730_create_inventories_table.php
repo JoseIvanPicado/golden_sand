@@ -32,9 +32,9 @@ return new class extends Migration
             $table->foreign('employees_id')->references('id')->on
             ('employees')->onDelete('cascade')->onUpdate('cascade');
 
-            $table->integer('orders_details_id')->unsigned();
-            $table->foreign('orders_details_id')->references('id')->on
-            ('orders_details')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('order_details_id')->unsigned();
+            $table->foreign('order_details_id')->references('id')->on
+            ('order_details')->onDelete('cascade')->onUpdate('cascade');
 
             $table->integer('ingredients_id')->unsigned();
             $table->foreign('ingredients_id')->references('id')->on
