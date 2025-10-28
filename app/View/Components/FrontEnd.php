@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Front_end extends Component
+class FrontEnd extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class Front_end extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.front_end');
+        return view('layouts.front');
     }
 }

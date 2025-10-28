@@ -17,9 +17,9 @@ return new class extends Migration
             $table->date('preparation_date');
             $table->string('status');
             $table->string('observations')->nullable();
-            $table->number('priority_level');
+            $table->integer('priority_level');
             $table->string('assigned_to')->nullable();
-            $table->number('amount_items');
+            $table->integer('amount_items');
             $table->time('start_time');
             $table->date('assignment_date');
 

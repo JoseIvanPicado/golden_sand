@@ -11,26 +11,32 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <link rel="shortcut icon" href="images/favicon.png" type="">
+  <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}" type="image/png">
 
-  <title> Golden Sand </title>
+  <title>Golden Sand</title>
 
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!-- Bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}" />
 
-  <!--owl slider stylesheet -->
+  <!-- Owl slider stylesheet (CDN, sin asset) -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-  <!-- nice select  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
-  <!-- font awesome style -->
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
 
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+  <!-- Nice select (CDN, sin asset) -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css"
+    integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ=="
+    crossorigin="anonymous" />
 
+  <!-- Font awesome style -->
+  <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" />
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+
+  <!-- Responsive style -->
+  <link rel="stylesheet" href="{{ asset('css/responsive.css') }}" />
 </head>
+
 
 <body>
 
@@ -139,85 +145,7 @@
       </div>
     </header>
     <!-- end header section -->
-    <!-- slider section -->
-    <section class="slider_section ">
-      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="container ">
-              <div class="row">
-                <div class="col-md-7 col-lg-6 ">
-                  <div class="detail-box">
-                    <h1>
-                      Golden Sand
-                    </h1>
-                    <p>
-                      Somos un emprendimiento de Estelí que fusiona el sabor casero con lo digital a través de un sándwich tipo omelette único. Con Golden Sand hacer un pedido es rápido y sencillo, ideal para quienes buscan algo fresco y diferente. Operamos solo con delivery, manteniendo precios accesibles y la esencia de lo hecho en casa. Nuestra visión es ser la opción preferida de comida innovadora y digital, creciendo con calidad, calidez e identidad en cada bocado.
-                    </p>
-                    <div class="btn-box">
-                      <a href="" class="btn1">
-                        Realizar Pedido
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item ">
-            <div class="container ">
-              <div class="row">
-                <div class="col-md-7 col-lg-6 ">
-                  <div class="detail-box">
-                    <h1>
-                      Golden Sand
-                    </h1>
-                    <p>
-                      Buscamos revolucionar la forma de comer en Estelí, llevando Golden Sand; único por su sabor y esencia casera, a todo nuestro departamento. Con una plataforma digital propia y un modelo de delivery inteligente, haremos que disfrutar algo bueno sea tan fácil como un clic. Nuestra visión es ser la referencia en comida innovadora y auténtica, expandiéndonos sin perder el toque local que nos hace diferentes.
-                    </p>
-                    <div class="btn-box">
-                      <a href="" class="btn1">
-                        Realizar Pedido
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="container ">
-              <div class="row">
-                <div class="col-md-7 col-lg-6 ">
-                  <div class="detail-box">
-                    <h1>
-                      Golden Sand
-                    </h1>
-                    <p>
-                      Golden Sand nació con la idea de un estudiante de Estelí que buscaba un almuerzo rico, rápido y accesible. De esa necesidad surgió la marca, y con ella nuestro sándwich tipo omelette, práctico, delicioso y con toque casero. Hoy, Golden Sand es un emprendimiento digital que lleva a toda la ciudad una opción fresca, sabrosa y fácil de disfrutar.
-                    </p>
-                    <div class="btn-box">
-                      <a href="" class="btn1">
-                        Realizar Pedido
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <ol class="carousel-indicators">
-            <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
-            <li data-target="#customCarousel1" data-slide-to="1"></li>
-            <li data-target="#customCarousel1" data-slide-to="2"></li>
-          </ol>
-        </div>
-      </div>
 
-    </section>
-    <!-- end slider section -->
   </div>
 
   <!-- offer section -->
@@ -1320,24 +1248,32 @@
   <!-- footer section -->
 
   <!-- jQery -->
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <!-- popper js -->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-  </script>
-  <!-- bootstrap js -->
-  <script src="js/bootstrap.js"></script>
-  <!-- owl slider -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-  </script>
-  <!-- isotope js -->
-  <script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
-  <!-- nice select -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
-  <!-- custom js -->
-  <script src="js/custom.js"></script>
-  <!-- Google Map -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
-  </script>
+<!-- jQuery -->
+<script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
+
+<!-- Popper (CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+  crossorigin="anonymous"></script>
+
+<!-- Bootstrap -->
+<script src="{{ asset('js/bootstrap.js') }}"></script>
+
+<!-- Owl slider (CDN) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<!-- Isotope (CDN) -->
+<script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
+
+<!-- Nice select (CDN) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+
+<!-- Custom JS -->
+<script src="{{ asset('js/custom.js') }}"></script>
+
+<!-- Google Maps -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+
   <!-- End Google Map -->
 
 </body>
